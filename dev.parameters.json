@@ -2,15 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "appServiceAppName": {
-            "value": "jseijas-app-dev-bicep"
+        "appServiceAppName2": {
+            "value": "mgarcia-assignment-dv"
         },
-        "appServicePlanName": {
-            "value": "jseijas-app-dev-bicep"
+        "appServicePlanName2": {
+            "value": "mgarcia-assignment-dv"
         },
         "storageAccountName": {
-            "value": "jseijasdevstorage"
+            "value": "mgarciadevstorage"
+        },
+        "environmentType": {
+            "value": "nonprod"
         }
     }
-}
-    
+}  

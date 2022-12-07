@@ -2,15 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "appServiceAppName": {
-            "value": "jseijas-app-prod-bicep"
+        "appServiceAppName1": {
+            "value": "mgarcia-assignment-pr"
         },
-        "appServicePlanName": {
-            "value": "jseijas-app-prod-bicep"
+        "appServicePlanName1": {
+            "value": "amgarcia-assignment-pr"
         },
         "storageAccountName": {
-            "value": "jseijasprodstorage"
+            "value": "mgarciaprodstorage"
+        },
+        "environmentType": {
+            "value": "prod"
         }
     }
 }
-    
