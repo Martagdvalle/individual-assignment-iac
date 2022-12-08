@@ -1,7 +1,7 @@
 @sys.description('The Web App name.')
 @minLength(3)
 @maxLength(24)
-param appServiceAppName1 string = 'mgarcia-assignment-pr'
+param appServiceAppName1 string = 'mgarcia-assignment-be-pr'
 @sys.description('The App Service Plan name.')
 @minLength(3)
 @maxLength(24)
@@ -9,7 +9,7 @@ param appServicePlanName1 string = 'mgarcia-assignment-pr'
 @sys.description('The Web App name.')
 @minLength(3)
 @maxLength(24)
-param appServiceAppName2 string = 'mgarcia-assignment-dv'
+param appServiceAppName2 string = 'mgarcia-assignment-be-dv'
 @sys.description('The App Service Plan name.')
 @minLength(3)
 @maxLength(24)
