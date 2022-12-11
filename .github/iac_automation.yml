@@ -32,13 +32,13 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy Bicep file
-    - name: deploy
+    - name: deploy to dev
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
         resourceGroupName: jseijas_students_1
         template: ./main.bicep
-        parameters: dev.parameters.json
+        parameters: dev.parameters.json dbuser=${{ secrets.DBUSER }} dbhost=${{ secrets.DBHOST }} dbpass=${{ secrets.DBPASS }} dbname=${{ secrets.DBNAME2 }}
         failOnStdErr: false
 
   deploy-prod:
@@ -59,11 +59,11 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy Bicep file
-    - name: deploy
+    - name: deploy to prod
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
         resourceGroupName: jseijas_students_1
         template: ./main.bicep
-        parameters: prod.parameters.json
+        parameters: prod.parameters.json dbuser=${{ secrets.DBUSER }} dbhost=${{ secrets.DBHOST }} dbpass=${{ secrets.DBPASS }} dbname=${{ secrets.DBNAME1 }}
         failOnStdErr: false
