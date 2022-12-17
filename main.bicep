@@ -58,7 +58,7 @@ var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Stan
     }
   }
 
-module appService1 'modules/appStuff.bicep' = if (environmentType == 'prod') {
+module appService1 'modules/appStuff_2.bicep' = if (environmentType == 'prod') {
   name: 'appService1'
   params: { 
     location: location
@@ -87,7 +87,7 @@ module appService3 'modules/appStuff.bicep' = if (environmentType == 'prod') {
   }
 }
 
-module appService2 'modules/appStuff.bicep' = if (environmentType == 'nonprod') {
+module appService2 'modules/appStuff_2.bicep' = if (environmentType == 'nonprod') {
   name: 'appService2'
   params: { 
     location: location
