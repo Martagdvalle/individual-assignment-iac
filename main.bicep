@@ -30,19 +30,19 @@ param storageAccountName string = 'mgarciastorage'
   'nonprod'
   'prod'
   ])
-  param environmentType string = 'nonprod'
-  param runtimeStack1 string = 'Python|3.10'
-  param runtimeStack2 string = 'Node|14-lts'
-  param startupCommand1 string = 'pm2 serve /home/site/wwwroot/dist --no-daemon --spa'
-  param location string = resourceGroup().location
-  @secure()
-  param dbhost string
-  @secure()
-  param dbuser string
-  @secure()
-  param dbpass string
-  @secure()
-  param dbname string
+param environmentType string = 'nonprod'
+param runtimeStack1 string = 'Python|3.10'
+param runtimeStack2 string = 'Node|14-lts'
+param startupCommand1 string = 'pm2 serve /home/site/wwwroot/dist --no-daemon --spa'
+param location string = resourceGroup().location
+@secure()
+param dbhost string
+@secure()
+param dbuser string
+@secure()
+param dbpass string
+@secure()
+param dbname string
   
 var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'   
 
