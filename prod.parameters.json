@@ -5,6 +5,9 @@
         "appServiceAppName1": {
             "value": "mgarcia-assignment-be-prod"
         },
+        "appServiceAppName3": {
+            "value": "mgarcia-assignment-fe-prod"
+        },
         "appServicePlanName1": {
             "value": "mgarcia-assignment-prod"
         },

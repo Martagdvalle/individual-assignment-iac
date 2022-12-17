@@ -3,7 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appServiceAppName2": {
-            "value": "mgarcia-assignment-dev"
+            "value": "mgarcia-assignment-be-dev"
+        },
+        "appServiceAppName4": {
+            "value": "mgarcia-assignment-fe-dv"
         },
         "appServicePlanName2": {
             "value": "mgarcia-assignment-dev"
