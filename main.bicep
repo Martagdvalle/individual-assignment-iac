@@ -31,6 +31,9 @@ param storageAccountName string = 'mgarciastorage'
   'prod'
   ])
   param environmentType string = 'nonprod'
+  param runtimeStack1 string = 'Python|3.10'
+  param runtimeStack2 string = 'Node|14-lts'
+  param startupCommand1 string = 'pm2 serve /home/site/wwwroot/dist --no-daemon --spa'
   param location string = resourceGroup().location
   @secure()
   param dbhost string
@@ -41,7 +44,7 @@ param storageAccountName string = 'mgarciastorage'
   @secure()
   param dbname string
   
-  var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'   
+var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'   
 
   resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
     name: storageAccountName
@@ -61,6 +64,7 @@ module appService1 'modules/appStuff.bicep' = if (environmentType == 'prod') {
     location: location
     appServiceAppName: appServiceAppName1
     appServicePlanName: appServicePlanName1
+    runtimeStack: runtimeStack1
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass
@@ -74,6 +78,8 @@ module appService3 'modules/appStuff.bicep' = if (environmentType == 'prod') {
     location: location
     appServiceAppName: appServiceAppName3
     appServicePlanName: appServicePlanName1
+    runtimeStack: runtimeStack2
+    startupCommand: startupCommand1
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass
@@ -87,6 +93,7 @@ module appService2 'modules/appStuff.bicep' = if (environmentType == 'nonprod') 
     location: location
     appServiceAppName: appServiceAppName2
     appServicePlanName: appServicePlanName2
+    runtimeStack: runtimeStack1
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass
@@ -100,6 +107,8 @@ module appService4 'modules/appStuff.bicep' = if (environmentType == 'nonprod') 
     location: location
     appServiceAppName: appServiceAppName4
     appServicePlanName: appServicePlanName2
+    runtimeStack: runtimeStack2
+    startupCommand: startupCommand1
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass
